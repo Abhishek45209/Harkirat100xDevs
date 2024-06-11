@@ -28,4 +28,6 @@ app.get("/", function (req, res) {
   res.json({ numberOfTrophy, nonindividual, individual });
 });
 
+app.get
+
 app.listen(3001);
