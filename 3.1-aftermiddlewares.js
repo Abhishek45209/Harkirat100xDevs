@@ -17,7 +17,7 @@ function middlewareInput(req, res, next) {
   const birthYear = req.query.birthYear;
   if (birthYear != 2001 && birthYear != 2000) {
     res.status(400).json({
-      msg: " Naah nigga you are not 90s kid ",
+      msg: " Naah ni you are not 90s kid ",
     });
   } else {
     next();

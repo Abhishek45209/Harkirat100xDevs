@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calc Amount</title>
+  </head>
+  <script>
+    async function getAmount() {
+      const principal = document.getElementById("principal").value;
+      const rate = document.getElementById("rate").value;
+      const time = document.getElementById("years").value;
+
+      const response = await fetch(
+        "http://localhost:3001/si?principal=" +
+          principal +
+          "&rate=" +
+          rate +
+          "&time=" +
+          time
+      );
+      const result = await response.text();
+      document.getElementById("element").innerHTML = result;
+    }
+  </script>
+  <body>
+    <input
+      type="text"
+      name="Principal"
+      id="principal"
+      placeholder="Enter Principal"
+    />
+    <input type="text" name="Rate" id="rate" placeholder="Rate" />
+    <input type="text" name="Time" id="years" placeholder="Years" />
+    <input type="button" onclick="getAmount()" value="Submit" /><br /><br />
+
+    <div id="element"></div>
+  </body>
+</html>
